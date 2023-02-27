@@ -3,12 +3,10 @@
 namespace App\Http\Controllers;
 use App\Models\Admin;
 use App\Models\Prueba;
-use Illuminate\Foundation\Auth\User as Authenticatable;
-use Illuminate\Support\Facades\Hash;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
-use Validator;
+use Illuminate\Support\Facades\Session;
 
 class PruebasController extends Controller
 {
