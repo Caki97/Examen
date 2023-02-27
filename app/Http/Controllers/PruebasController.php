@@ -18,6 +18,8 @@ class PruebasController extends Controller
              'password' => 'required'
          ]);
 
+         $credentials = $request->except(['_token']);
+
          Auth::attempt($credentials);
 
           if (auth()->attempt($credentials)) {  //comprobación de autenticación 
@@ -26,7 +28,7 @@ class PruebasController extends Controller
 
          } else {
              session()->flash('message', 'Invalid credentials');
-             return redirect()->back();
+             return redirect('welcome');
          }
      }
 

@@ -12,6 +12,7 @@ use App\Http\Controllers\PruebasController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::view('/welcome', 'welcome')->name('welcome');
 
 Route::view('/login', 'login')->name('logininicio');
 Route::post('/login-usuario', [PruebasController::class, 'login'])->name('login');
