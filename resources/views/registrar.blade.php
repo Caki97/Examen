@@ -1,4 +1,4 @@
-<form method="post" action="{{ route('registro') }}">
+<form method="post" action="{{ route('registrar') }}">
     @csrf
     <div class="form-group">
         <label>Username</label>

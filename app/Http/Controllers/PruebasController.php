@@ -38,7 +38,7 @@ class PruebasController extends Controller
              'password' => 'required'
          ]);
 
-         $user = Estudiante::create([
+         $user = Prueba::create([
              'name' => trim($request->input('name')),
              'email' => strtolower($request->input('email')),
              'password' => bcrypt($request->input('password')),
