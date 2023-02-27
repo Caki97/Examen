@@ -12,6 +12,14 @@
         <label>Password</label>
         <input type="password" name="password" class="form-control p_input">
     </div>
+    <div class="form-group">
+        <label>Rol</label>
+        <select name="role">
+            <option value="user">user</option>
+            <option value="admin">admin</option>
+            <option value="paciente">paciente</option>
+        </select>
+    </div>
 
     <div class="text-center">
         <button type="submit" class="btn btn-primary btn-block enter-btn">Register</button>

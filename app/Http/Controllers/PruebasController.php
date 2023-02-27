@@ -28,7 +28,7 @@ class PruebasController extends Controller
 
          } else {
              session()->flash('message', 'Invalid credentials');
-             return redirect('welcome');
+             return redirect()->back();
          }
      }
 
@@ -37,13 +37,15 @@ class PruebasController extends Controller
          $request->validate([
              'name' => 'required',
              'email' => 'required',
-             'password' => 'required'
+             'password' => 'required',
+             'role' => 'required'
          ]);
 
          $user = Prueba::create([
              'name' => trim($request->input('name')),
              'email' => strtolower($request->input('email')),
              'password' => bcrypt($request->input('password')),
+             'role' => $request->input('role'),
          ]);
 
          return redirect()->route('admin');
