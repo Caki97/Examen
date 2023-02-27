@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\DatosController;
 use App\Http\Controllers\Etiquetas;
+use App\Http\Controllers\PruebasController; 
 
 /*
 |--------------------------------------------------------------------------
@@ -14,8 +15,9 @@ use App\Http\Controllers\Etiquetas;
 |
 */
 
-Auth::routes();
+Route::view('/login', 'login')->name('logininicio');
+Route::post('/login-usuario', [PruebasController::class, 'login'])->name('login');
 
-Route::get('mundo', function () {
-    return 'LOOOOOOOOOOOOOOGIN';
-});
+
+Route::view('/registrar', 'registrar')->name('registrarinicio');
+Route::post('/registrar-usuario', [PruebasController::class, 'registro'])->name('registrar');
