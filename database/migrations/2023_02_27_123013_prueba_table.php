@@ -13,11 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('examen', function (Blueprint $table) {
-            $table->id();
+        Schema::create('user', function (Blueprint $table) {
             $table->string('name');
-            $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
+            $table->string('email')->primary()->onDelete('cascade')->onUpdate('cascade');
             $table->string('password');
             $table->enum('role',['user','admin','paciente'])->default('user');  //añadimos los roles como ejemplo
             $table->rememberToken();

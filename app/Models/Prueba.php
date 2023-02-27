@@ -18,7 +18,8 @@ class Prueba extends Authenticatable
      *
      * @var array<int, string>
      */
-    protected $table = 'examen';
+    protected $table = 'user';
+    protected $primaryKey = 'email';
     protected $fillable = [
         'name',
         'email',
