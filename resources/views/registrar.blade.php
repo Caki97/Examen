@@ -20,7 +20,10 @@
             <option value="paciente">paciente</option>
         </select>
     </div>
-
+    <div class="form-group">
+        <label>Comentarios</label>
+        <input type="text" name="comentarios" class="form-control p_input">
+    </div>
     <div class="text-center">
         <button type="submit" class="btn btn-primary btn-block enter-btn">Register</button>
     </div>

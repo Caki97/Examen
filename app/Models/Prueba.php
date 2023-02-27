@@ -44,4 +44,9 @@ class Prueba extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function admin()
+    {
+        return $this->hasOne(Admin::class, 'email', 'email');
+    }
 }

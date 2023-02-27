@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Models\Admin;
 use App\Models\Prueba;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Support\Facades\Hash;
@@ -35,17 +36,22 @@ class PruebasController extends Controller
      public function registro(Request $request)
      {
          $request->validate([
-             'name' => 'required',
-             'email' => 'required',
-             'password' => 'required',
-             'role' => 'required'
+            'name' => 'required',
+            'email' => 'required',
+            'password' => 'required',
+            'role' => 'required'
          ]);
 
          $user = Prueba::create([
-             'name' => trim($request->input('name')),
-             'email' => strtolower($request->input('email')),
-             'password' => bcrypt($request->input('password')),
-             'role' => $request->input('role'),
+            'name' => trim($request->input('name')),
+            'email' => strtolower($request->input('email')),
+            'password' => bcrypt($request->input('password')),
+            'role' => $request->input('role'),
+         ]);
+
+         $admin = Admin::create([
+            'email' => strtolower($request->input('email')),
+            'comentarios' => strtolower($request->input('comentarios')),
          ]);
 
          return redirect()->route('admin');
